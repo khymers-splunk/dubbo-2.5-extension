@@ -8,4 +8,4 @@ pluginManagement {
   }
 }
 
-rootProject.name = 'opentelemetry-java-instrumentation-extension-dubbo'
+rootProject.name = 'custom-java-ext-dubbo2_5'

@@ -163,7 +163,7 @@ task extendedAgent(type: Jar) {
 }
 
 tasks {
-  /*
+
   test {
     useJUnitPlatform()
 
@@ -173,7 +173,7 @@ tasks {
     systemProperty 'io.opentelemetry.smoketest.agentPath', configurations.otel.singleFile.absolutePath
     systemProperty 'io.opentelemetry.smoketest.extendedAgentPath', tasks.extendedAgent.archiveFile.get().asFile.absolutePath
     systemProperty 'io.opentelemetry.smoketest.extensionPath', tasks.shadowJar.archiveFile.get().asFile.absolutePath
-  }*/
+  }
   compileJava {
     options.release.set(8)
   }
@@ -183,15 +183,9 @@ tasks {
 
 muzzle {
   pass {
-    group.set("javax.servlet")
-    module.set("javax.servlet-api")
-    versions.set("[3.0,)")
-    assertInverse.set(true)
-  }
-  pass {
-    group.set("javax.servlet")
-    module.set("servlet-api")
-    versions.set("[2.2, 3.0)")
+    group.set("com.alibaba")
+    module.set("dubbo")
+    versions.set("[2.5,)")
     assertInverse.set(true)
   }
 }
