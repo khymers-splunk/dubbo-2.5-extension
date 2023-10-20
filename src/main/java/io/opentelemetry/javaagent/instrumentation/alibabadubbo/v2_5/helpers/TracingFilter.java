@@ -13,11 +13,12 @@ import com.alibaba.dubbo.rpc.RpcContext;
 import com.alibaba.dubbo.rpc.RpcInvocation;
 import java.util.concurrent.Future;
 import java.util.concurrent.CompletableFuture;
+import java.util.logging.Logger;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.instrumentation.api.instrumenter.Instrumenter;
 
-final class TracingFilter implements Filter {
+public final class TracingFilter implements Filter {
 
   private final Instrumenter<DubboRequest, Result> serverInstrumenter;
   private final Instrumenter<DubboRequest, Result> clientInstrumenter;
@@ -55,12 +56,12 @@ final class TracingFilter implements Filter {
     boolean isSynchronous = true;
     try (Scope ignored = context.makeCurrent()) {
       result = invoker.invoke(invocation);
-       /*if(!isServer) {
+       /*if(!isServer) { //
         Future f = rpcContext.getContext().getFuture();
         if (f != null) {
           isSynchronous = false;
-          // Amended as no CompletableFuture in dubbo 2.5
-          CompletableFuture<Object> future = CompletableFuture.supplyAsync(() ->
+          // TODO: No CompletableFuture in dubbo 2.5, fix this for async
+          CompletableFuture<Object> future = CompletableFuture.supplyAsync(()
           {
             try {
               f.get();

@@ -30,9 +30,10 @@ public final class DubboAlibabaInstrumentationModule extends InstrumentationModu
 
   private static final Logger logger = Logger.getLogger(InstrumentationModule.class.getName());
   private static final String CLASS_LOADER_MATCH = "com.alibaba.dubbo.rpc.Filter";
-  //private static final String CLASS_TO_INTERCEPT = "com.alibaba.dubbo.common.extension.ExtensionLoader";
-  private static final String CLASS_TO_INTERCEPT = "com.alibaba.dubbo.monitor.support.MonitorFilter";
-  private static final String METHOD_TO_INTERCEPT = "invoke";
+  private static final String CLASS_TO_INTERCEPT = "com.alibaba.dubbo.common.extension.ExtensionLoader";
+  // KH: Removing - will use SPI instead
+  //private static final String CLASS_TO_INTERCEPT = "com.alibaba.dubbo.monitor.support.MonitorFilter";
+  //private static final String METHOD_TO_INTERCEPT = "invoke";
 
   public DubboAlibabaInstrumentationModule() {
     super("alibaba-dubbo", "alibaba-dubbo-2.5");
@@ -41,6 +42,12 @@ public final class DubboAlibabaInstrumentationModule extends InstrumentationModu
   @Override
   public ElementMatcher.Junction<ClassLoader> classLoaderMatcher() {
     return hasClassesNamed(CLASS_LOADER_MATCH);
+  }
+
+  @Override
+  public void registerHelperResources(HelperResourceBuilder helperResourceBuilder) {
+    helperResourceBuilder.register(
+        "META-INF/services/com.alibaba.dubbo.rpc.Filter");
   }
 
   @Override
@@ -68,9 +75,9 @@ public final class DubboAlibabaInstrumentationModule extends InstrumentationModu
     @Override
     public void transform(TypeTransformer transformer) {
 
-      transformer.applyAdviceToMethod(
-          named(METHOD_TO_INTERCEPT),
-          "io.opentelemetry.javaagent.instrumentation.alibabadubbo.v2_5.DubboAlibabaAdvice");
+     // transformer.applyAdviceToMethod(
+      //    named(METHOD_TO_INTERCEPT),
+       //   "io.opentelemetry.javaagent.instrumentation.alibabadubbo.v2_5.DubboAlibabaAdvice");
     }
   }
 }

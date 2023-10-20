@@ -35,6 +35,6 @@ public class OpenTelemetryFilter implements Filter {
 
   @Override
   public Result invoke(Invoker<?> invoker, Invocation invocation) {
-    return delegate.invoke(invoker, invocation);
+   return delegate.invoke(invoker, invocation);
   }
 }

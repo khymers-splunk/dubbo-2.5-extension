@@ -18,7 +18,7 @@ plugins {
 }
 
 group 'io.opentelemetry.example'
-version '1.0'
+version '2.0'
 
 ext {
    versions = [

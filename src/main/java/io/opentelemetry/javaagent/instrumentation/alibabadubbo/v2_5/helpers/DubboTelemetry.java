@@ -5,6 +5,7 @@
 
 package io.opentelemetry.javaagent.instrumentation.alibabadubbo.v2_5.helpers;
 
+import io.opentelemetry.javaagent.instrumentation.alibabadubbo.v2_5.helpers.TracingFilter;
 import com.alibaba.dubbo.rpc.Filter;
 import com.alibaba.dubbo.rpc.Result;
 import io.opentelemetry.api.OpenTelemetry;
