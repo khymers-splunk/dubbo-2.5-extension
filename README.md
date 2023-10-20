@@ -28,15 +28,3 @@ This custom extension leverages OpenTelemetry's powerful Java extension capabili
 1. This is a temporary, stop-gap measure targeting specific use-cases where migration to a more recent version of Dubbo is not possible.
 2. The Dubbo 2.5.x framework is no longer under active development or support.
 3. This extension is not officially supported by Splunk. Use at your own risk.
-
-## Support
-
-This extension is community-supported. For issues or queries, please submit a GitHub issue.
-
-## Contributing
-
-We welcome contributions from the community. If you'd like to contribute, please fork the repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
