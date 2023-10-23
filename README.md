@@ -23,6 +23,16 @@ Replace `/path/to/` with the appropriate directories where your `.jar` files are
 
 This custom extension leverages OpenTelemetry's powerful Java extension capabilities, allowing for additional instrumentation and customization. For more details on extending the OpenTelemetry Java Agent, please refer to the [official documentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/contributing/extension.md).
 
+## OTel Java Agent Co-existence
+
+This extension uses OpenTelemetry SDK, and relies on the same version of the SDK being used by the Java agent it extends. 
+The following versions have been built and tested:
+
+|Extension version | OTel Java SDK Version | Splunk Otel Java Agent Version |
+|----------------- |-----------------------|--------------------------------|
+| 2.0 | 1.31.0                | 1.29.0                         |
+|2.1| 1.26.0                | 1.28.0                         |
+
 ## Limitations
 
 1. This is a temporary, stop-gap measure targeting specific use-cases where migration to a more recent version of Dubbo is not possible.
