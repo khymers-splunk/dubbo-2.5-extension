@@ -31,7 +31,7 @@ The following versions have been built and tested:
 |Extension version | OTel Java SDK Version | Splunk Otel Java Agent Version |
 |----------------- |-----------------------|--------------------------------|
 | 2.0 | 1.31.0                | 1.29.0                         |
-|2.1| 1.26.0                | 1.28.0                         |
+|2.1| 1.28.0                | 1.26.0                         |
 
 ## Limitations
 
