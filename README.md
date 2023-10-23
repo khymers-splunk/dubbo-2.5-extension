@@ -21,7 +21,7 @@ Replace `/path/to/` with the appropriate directories where your `.jar` files are
 
 ## OpenTelemetry Java Extension Capabilities
 
-This custom extension leverages OpenTelemetry's powerful Java extension capabilities, allowing for additional instrumentation and customization. For more details on extending the OpenTelemetry Java Agent, please refer to the [official documentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/docs/contributing/extension.md).
+This custom extension leverages OpenTelemetry's powerful Java extension capabilities, allowing for additional instrumentation and customization. For more details on extending the OpenTelemetry Java Agent, please refer to the [official documentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/examples/extension).
 
 ## OTel Java Agent Co-existence
 
